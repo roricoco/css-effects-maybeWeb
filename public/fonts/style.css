@@ -1,0 +1,52 @@
+/* @font-face {
+  font-family: GmarketSansTTF;
+  font-weight: 300;
+  font-display: swap;
+  src: url('GmarketSansTTF/GmarketSansTTFLight.woff2') format('woff2'),
+    url('GmarketSansTTF/GmarketSansTTFLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: GmarketSansTTF;
+  font-weight: 500;
+  font-display: swap;
+  src: url('GmarketSansTTF/GmarketSansTTFMedium.woff2') format('woff2'),
+    url('GmarketSansTTF/GmarketSansTTFMedium.woff') format('woff');
+}
+
+@font-face {
+  font-family: GmarketSansTTF;
+  font-weight: 700;
+  font-display: swap;
+  src: url('GmarketSansTTF/GmarketSansTTFBold.woff2') format('woff2'),
+    url('GmarketSansTTF/GmarketSansTTFBold.woff') format('woff');
+} */
+
+@font-face {
+  font-family: GmarketSansTTF;
+  font-weight: 300;
+  font-display: swap;
+  src: url('GmarketSansTTF/GmarketSansTTFLight.ttf');
+
+}
+
+@font-face {
+  font-family: GmarketSansTTF;
+  font-weight: 500;
+  font-display: swap;
+  src: url('GmarketSansTTF/GmarketSansTTFMedium.ttf');
+}
+
+@font-face {
+  font-family: GmarketSansTTF;
+  font-weight: 700;
+  font-display: swap;
+  src: url('GmarketSansTTF/GmarketSansTTFBold.ttf');
+}
+
+body,
+html,
+input,
+textarea {
+  font-family: GmarketSansTTF;
+}

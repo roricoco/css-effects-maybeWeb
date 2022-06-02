@@ -1,68 +1,89 @@
-import styled from "styled-components";
-import { numberToRem } from "~/utils/rem";
+import styled from 'styled-components';
+import { numberToRem } from '~/utils/rem';
 
 const HomeStyled = styled.div`
+  background: ${props => props.theme.color.mainBackground};
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
 
-
-  .title {
-    text-align : center;
-    font-size: 5rem;
-    margin : 4rem 0;
-  }
-
-  .buttons {
-    max-width: 1440px;
-    margin: 0 auto;
-    width : 100%;
-    display : flex;
-    grid-gap: 1rem;
-    overflow-x : auto;
-
-    > button {
-      cursor: pointer;
-      display : flex;
-      justify-content : center;
-      align-items: center;
-      height: ${numberToRem(40, 1)};
-      background : transparent;
-      border : 1px solid rgba(0, 0, 0, 0.4);
-      padding: 0 2rem;
-    }
-  }
-  
-
-  .uploadInput {
-    max-width: ${numberToRem(500, 1)};
+  .container {
     width: 100%;
-    margin: 0 auto;
-    height : ${numberToRem(500, 1)};
-    display : flex;
-    position : relative;
-    border : 1px dashed rgba(0, 0, 0, 0.4);
-    justify-content: center;
-    align-items : center;
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
 
-    font-size : 4rem;
+    .miniTitle {
+      margin-bottom: 2rem;
+    }
 
-    input {
-      position: absolute;
-      top: 0;
-      left : 0;
-      width: 100%;
-      height :100%;
-      opacity: 0;
-      cursor: pointer;
+    .left {
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      border: 1px solid rgba(0, 0, 0, 0.1);
+
+      overflow-y: auto;
+      margin-top: ${numberToRem(70, 1)};
+      width: ${numberToRem(280, 1)};
+      margin-right: ${numberToRem(80, 1)};
+      max-height: ${numberToRem(750, 1)};
+    }
+
+    .right {
+      position: relative;
+      padding-top: ${numberToRem(70, 1)};
+      width: ${numberToRem(1250, 1)};
+
+      .loading {
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        > div {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      > .title {
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+
+      .whiteBox {
+        position: relative;
+        width: 100%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: ${numberToRem(750, 1)};
+
+        > .animationBox {
+          width: ${numberToRem(300, 1)};
+          height: ${numberToRem(300, 1)};
+          background: white;
+          animation: 1s swing-top-fwd;
+          animation-fill-mode: forwards;
+          overflow: hidden;
+
+          & span {
+            min-height: 100%;
+            & img {
+              object-fit: cover;
+            }
+          }
+        }
+      }
     }
   }
-
-
-  .image {
-    display: flex;
-    justify-content : center;
-  }
-
-  
-
 `;
 
 export default HomeStyled;
