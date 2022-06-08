@@ -11,9 +11,9 @@ interface CategoriesListProps {
   setSelect: any;
   effect: any;
   setAnimation?: any;
+  animation?: string;
 }
-const CategoriesList = ({ className, select, setSelect, effect, setAnimation }: CategoriesListProps) => {
-
+const CategoriesList = ({ className, select, setSelect, effect, setAnimation, animation }: CategoriesListProps) => {
   // <FaHotjar size={18} />
   return (
     <CategoriesListStyled className={clsx('CategoriesList', className)}>
@@ -23,14 +23,13 @@ const CategoriesList = ({ className, select, setSelect, effect, setAnimation }: 
           return <div className='list' key={kk}>
             <div className={clsx("title", effectVal.name === select && "active")} onClick={() => setSelect(effectVal.name)}>{effectVal.name}</div>
             {
-              effectVal.name === select ?
-                <div className="item">
-                  {
-                    effectVal.effects.map((name: string, k: number) => <div key={k} onClick={() => {
-                      setAnimation(name);
-                    }}>{name}</div>)
-                  }
-                </div> : null
+              <div className={clsx("item", effectVal.name === select && "show")}>
+                {
+                  effectVal.effects.map((name: string, k: number) => <div className={clsx(animation === name && "active")} key={k} onClick={() => {
+                    setAnimation(name);
+                  }}>{name}</div>)
+                }
+              </div>
             }
 
           </div>

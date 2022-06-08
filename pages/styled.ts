@@ -7,6 +7,12 @@ const HomeStyled = styled.div`
   justify-content: center;
   padding: 0 20px;
 
+  .uploadImagePreview {
+    width : 100%;
+    height: 100%;
+    object-fit : cover;
+  }
+
   .container {
     width: 100%;
     max-width: 1600px;
@@ -64,7 +70,7 @@ const HomeStyled = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        height: ${numberToRem(750, 1)};
+        height: ${numberToRem(623, 1)};
 
         > .animationBox {
           width: ${numberToRem(300, 1)};

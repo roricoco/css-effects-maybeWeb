@@ -35,15 +35,50 @@ export const CategoriesListStyled = styled.div`
     }
 
     > .item {
-      transition: 0.3s all;
-      padding: 0.5rem 0;
+      transition: 0.5s all;
 
-      animation: h100 0.3s forwards;
+      /* animation: h100 0.3s forwards; */
       background: #ededed;
-      max-height: 0%;
+      max-height: 0;
+      overflow-y: hidden;
 
-      overflow-y: auto;
-      /* max-height: ${numberToRem(400, 1)}; */
+      &.show {
+        padding: 0.5rem 0;
+      /* max-height: ; */
+        max-height: ${numberToRem(400, 1)};
+        overflow-y: auto;
+      }
+
+      &::-webkit-scrollbar {
+        background: transparent;
+        border-radius : 4px;
+        display: none;
+        transition: all .5s;
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #dadadd;
+        border-radius : 4px;
+        display: none;
+        transition: all .5s;
+      }
+/* 
+      &::-webkit-scrollbar-thumb {
+        background-color: #35363b;
+        border-radius : 4px;
+        display: none;
+        transition: all .5s;
+      } */
+
+
+      &:hover::-webkit-scrollbar-thumb {
+        display: block;
+      } 
+
+      &:hover::-webkit-scrollbar {
+        display: block;
+      } 
 
       > div {
         color: ${props => props.theme.color.grayColor};
@@ -53,6 +88,11 @@ export const CategoriesListStyled = styled.div`
         transition: all 0.1s ease;
 
         &:hover {
+          color: black;
+          padding-left: 1.5rem;
+        }
+
+        &.active {
           color: black;
           padding-left: 1.5rem;
         }
