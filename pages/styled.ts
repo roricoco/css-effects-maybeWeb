@@ -64,6 +64,7 @@ const HomeStyled = styled.div`
       }
 
       .whiteBox {
+        z-index: 2;
         position: relative;
         width: 100%;
         background: white;
@@ -86,6 +87,19 @@ const HomeStyled = styled.div`
               object-fit: cover;
             }
           }
+        }
+
+        > .shadowBox {
+          position : absolute;
+          top : 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: -1;
+          width: ${numberToRem(300, 1)};
+          height: ${numberToRem(300, 1)};
+          background: rgba(0, 100, 255, 0.2);
+          border : 2px dashed rgba(0, 0, 0, 0.2);
+          overflow: hidden;;
         }
       }
     }

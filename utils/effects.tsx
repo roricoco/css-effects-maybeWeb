@@ -1,4 +1,5 @@
-export default [
+export const effects: any = [
+
   {
     name: 'scale-up',
     effects: [
@@ -19,6 +20,19 @@ export default [
       'scale-up-ver-bottom',
     ],
   },
+
+  // {
+  //   name: "잔상효과",
+  //   effects: [
+  //     {
+  //       name: "test",
+  //       template: <>
+
+  //       </>
+  //     }
+  //   ],
+  // },
+
   {
     name: 'scale-down',
     effects: [
